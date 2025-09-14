@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple ATM</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="atm" role="application" aria-label="Simple ATM">
+    <h2>Simple ATM</h2>
+    <p class="lead">Enter PIN then use Withdraw, Deposit, Balance or Mini Statement.</p>
+
+    <div id="container">
+      <!-- PIN screen -->
+      <div id="pinScreen" class="screen">
+        <label for="pin">Enter 4-digit PIN</label>
+        <input id="pin" type="password" maxlength="4" placeholder="e.g. 1234" />
+        <div class="row">
+          <button id="pinSubmit" class="btn btn-primary">Enter</button>
+          <button id="pinClear" class="btn btn-ghost">Clear</button>
+        </div>
+        <div id="pinMsg" class="error"></div>
+        <div class="small">Default PIN: <strong>1234</strong></div>
+      </div>
+
+      <!-- Main menu -->
+      <div id="menuScreen" class="screen" style="display:none;">
+        <div class="info">
+          <div>
+            <div class="muted">Logged in:</div>
+            <div id="userLabel"><strong>Customer</strong></div>
+          </div>
+          <div>
+            <div class="muted">Balance</div>
+            <div id="balanceDisplay"><strong>Rs 0</strong></div>
+          </div>
+        </div>
+
+        <div class="menu row">
+          <button class="btn btn-primary" id="btnWithdraw">Withdraw</button>
+          <button class="btn btn-primary" id="btnDeposit">Deposit</button>
+          <button class="btn btn-ghost" id="btnStatement">Mini Statement</button>
+          <button class="btn btn-ghost" id="btnLogout">Logout</button>
+        </div>
+
+        <div id="actionArea"></div>
+        <div id="message"></div>
+        <div id="txList" class="transactions" style="display:none;"></div>
+      </div>
+    </div>
+
+    <footer>Made with HTML, CSS & JS — Simple ATM demo</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
